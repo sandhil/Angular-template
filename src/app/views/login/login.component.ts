@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { NgStyle } from "@angular/common";
 import { IconDirective } from "@coreui/icons-angular";
 import { LocalService } from "../../local.service";
@@ -44,9 +44,14 @@ import {
     FormsModule,
   ],
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   constructor(private localService: LocalService, private router: Router) {
-    console.log("inside login--");
+    // localService.clearData();
+  }
+  ngOnInit(): void {
+    if (this.localService.getData("isLoggedIn") === "true") {
+      this.router.navigateByUrl("home");
+    }
   }
 
   submit() {

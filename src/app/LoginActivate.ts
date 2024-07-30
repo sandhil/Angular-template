@@ -16,8 +16,7 @@ export class LoginActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): boolean {
-    if (this.localService.getData("isLoggedIn") === null) {
-      console.log(this.localService.getData("isLoggedIn"));
+    if (this.localService.getData("isLoggedIn") !== "true") {
       this.router.navigate(["login"]);
     }
     return true;

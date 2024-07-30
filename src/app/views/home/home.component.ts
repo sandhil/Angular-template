@@ -16,16 +16,6 @@ const CITIES: City[] = [
     name: "Tokyo",
     population: 37_393_000,
   },
-  {
-    id: 2,
-    name: "Delhi",
-    population: 30_290_000,
-  },
-  {
-    id: 3,
-    name: "Shanghai",
-    population: 27_058_000,
-  },
 ];
 
 @Component({

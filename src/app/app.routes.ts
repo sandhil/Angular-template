@@ -7,12 +7,11 @@ export const routes: Routes = [
   {
     path: "home",
     component: DefaultLayoutComponent,
+    canActivate: [LoginActivate],
     data: {
       title: "Home",
     },
-    children: [
-      { path: "", component: HomeComponent, canActivate: [LoginActivate] },
-    ],
+    children: [{ path: "", component: HomeComponent }],
   },
   {
     path: "",
@@ -40,5 +39,5 @@ export const routes: Routes = [
       title: "Register Page",
     },
   },
-  { path: "**", redirectTo: "dashboard" },
+  { path: "**", redirectTo: "home" },
 ];
