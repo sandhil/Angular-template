@@ -1,18 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
-import { Title } from '@angular/platform-browser';
+import { Component, OnInit } from "@angular/core";
+import { NavigationEnd, Router, RouterOutlet } from "@angular/router";
+import { Title } from "@angular/platform-browser";
 
-import { IconSetService } from '@coreui/icons-angular';
-import { iconSubset } from './icons/icon-subset';
+import { IconSetService } from "@coreui/icons-angular";
+import { iconSubset } from "./icons/icon-subset";
 
 @Component({
-  selector: 'app-root',
-  template: '<router-outlet />',
+  selector: "app-root",
+  template: "<router-outlet />",
   standalone: true,
-  imports: [RouterOutlet]
+  imports: [RouterOutlet],
 })
 export class AppComponent implements OnInit {
-  title = 'CoreUI Angular Admin Template';
+  title = "Angular Admin Template";
 
   constructor(
     private router: Router,
