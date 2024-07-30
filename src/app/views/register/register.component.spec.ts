@@ -8,7 +8,7 @@ import {
 } from "@coreui/angular";
 import { IconModule } from "@coreui/icons-angular";
 import { IconSetService } from "@coreui/icons-angular";
-import { iconSubset } from "../../../icons/icon-subset";
+import { iconSubset } from "../../icons/icon-subset";
 import { RegisterComponent } from "./register.component";
 
 describe("RegisterComponent", () => {

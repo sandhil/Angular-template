@@ -1,5 +1,5 @@
 {
-  "name": "sandhil",
+  "name": "angular-admin-template",
   "version": "5.2.5",
   "copyright": "Copyright 2024 creativeLabs Łukasz Holeczek",
   "license": "MIT",
@@ -41,7 +41,8 @@
     "ngx-scrollbar": "^13.0.3",
     "rxjs": "~7.8.1",
     "tslib": "^2.6.3",
-    "zone.js": "~0.14.7"
+    "zone.js": "~0.14.7",
+    "@angular/material": "^18.1.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^18.1.0",

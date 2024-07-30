@@ -1,65 +1,44 @@
-import { Routes } from '@angular/router';
-import { DefaultLayoutComponent } from './layout';
+import { Routes } from "@angular/router";
+import { DefaultLayoutComponent } from "./layout";
+import { HomeComponent } from "./views/home/home.component";
+import { LoginActivate } from "./LoginActivate";
 
 export const routes: Routes = [
   {
-    path: '',
-    redirectTo: 'dashboard',
-    pathMatch: 'full',
-  },
-  {
-    path: '',
+    path: "home",
     component: DefaultLayoutComponent,
     data: {
-      title: 'Home',
+      title: "Home",
     },
     children: [
-      {
-        path: 'dashboard',
-        loadChildren: () =>
-          import('./views/dashboard/routes').then((m) => m.routes),
-      },
+      { path: "", component: HomeComponent, canActivate: [LoginActivate] },
     ],
   },
   {
-    path: '404',
+    path: "",
     loadComponent: () =>
-      import('./views/pages/page404/page404.component').then(
-        (m) => m.Page404Component
-      ),
+      import("./views/login/login.component").then((m) => m.LoginComponent),
     data: {
-      title: 'Page 404',
+      title: "Login Page",
     },
   },
   {
-    path: '500',
+    path: "login",
     loadComponent: () =>
-      import('./views/pages/page500/page500.component').then(
-        (m) => m.Page500Component
-      ),
+      import("./views/login/login.component").then((m) => m.LoginComponent),
     data: {
-      title: 'Page 500',
+      title: "Login Page",
     },
   },
   {
-    path: 'login',
+    path: "register",
     loadComponent: () =>
-      import('./views/pages/login/login.component').then(
-        (m) => m.LoginComponent
-      ),
-    data: {
-      title: 'Login Page',
-    },
-  },
-  {
-    path: 'register',
-    loadComponent: () =>
-      import('./views/pages/register/register.component').then(
+      import("./views/register/register.component").then(
         (m) => m.RegisterComponent
       ),
     data: {
-      title: 'Register Page',
+      title: "Register Page",
     },
   },
-  { path: '**', redirectTo: 'dashboard' },
+  { path: "**", redirectTo: "dashboard" },
 ];
