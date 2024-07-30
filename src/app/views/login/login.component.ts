@@ -4,6 +4,7 @@ import { IconDirective } from "@coreui/icons-angular";
 import { LocalService } from "../../local.service";
 import { Router } from "@angular/router";
 import { FormsModule } from "@angular/forms";
+import { NgIf } from "@angular/common";
 
 import {
   ContainerComponent,
@@ -18,7 +19,7 @@ import {
   InputGroupTextDirective,
   FormControlDirective,
   ButtonDirective,
-  FormModule,
+  SpinnerComponent,
 } from "@coreui/angular";
 
 @Component({
@@ -42,21 +43,25 @@ import {
     ButtonDirective,
     NgStyle,
     FormsModule,
+    SpinnerComponent,
+    NgIf,
   ],
 })
 export class LoginComponent implements OnInit {
+  isLoading = false;
   constructor(private localService: LocalService, private router: Router) {
     // localService.clearData();
   }
   ngOnInit(): void {
     if (this.localService.getData("isLoggedIn") === "true") {
-      this.router.navigateByUrl("home");
+      // this.router.navigateByUrl("home");
     }
   }
 
   submit() {
-    this.localService.saveData("isLoggedIn", "true");
-    this.router.navigateByUrl("home");
+    this.isLoading = true;
+    // this.localService.saveData("isLoggedIn", "true");
+    // this.router.navigateByUrl("home");
   }
 
   onSignUp() {

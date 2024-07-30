@@ -28,8 +28,10 @@
                 <c-container>
                   <c-row class="justify-content-between" style="margin: 0px;">
                   <c-col xs="4">
-                    <button cButton class="text-center" color="primary" type="submit" (click)="submit()">
-                      Login
+                    <button cButton [disabled]="isLoading" class="text-center" color="primary" type="submit" (click)="submit()" style="white-space: nowrap;">
+                      Login @if (isLoading) {
+                      <c-spinner aria-hidden="true" size="sm"></c-spinner>
+                     } 
                     </button>
                   </c-col>
                   <c-col xs="4">
