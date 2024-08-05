@@ -54,14 +54,14 @@ export class LoginComponent implements OnInit {
   }
   ngOnInit(): void {
     if (this.localService.getData("isLoggedIn") === "true") {
-      // this.router.navigateByUrl("home");
+      this.router.navigateByUrl("home");
     }
   }
 
   submit() {
-    this.isLoading = true;
-    // this.localService.saveData("isLoggedIn", "true");
-    // this.router.navigateByUrl("home");
+    // this.isLoading = true;
+    this.localService.saveData("isLoggedIn", "true");
+    this.router.navigateByUrl("home");
   }
 
   onSignUp() {

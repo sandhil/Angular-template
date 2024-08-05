@@ -1,0 +1,10 @@
+runtime: python39 # Replace with your desired Node.js version
+
+handlers:
+  - url: /
+    static_files: dist/angular-admin-template/browser/index.html
+    upload: dist/angular-admin-template/browser/index.html
+
+  - url: /(.*)
+    static_files: dist/angular-admin-template/browser/\1
+    upload: dist/angular-admin-template/browser/(.*)
